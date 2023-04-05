@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">News app</string>
+    <string name="app_name" translatable="false">News app</string>
     <string name="article_image_description">Article image description</string>
     <string name="no_title">No title</string>
     <string name="no_description">No description</string>
+    <string name="source" translatable="false">Article link</string>
 </resources>

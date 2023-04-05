@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="article_image_description">Description de l\'image de l\'article</string>
+    <string name="no_title">Pas de titre</string>
+    <string name="no_description">Pas de description</string>
+</resources>

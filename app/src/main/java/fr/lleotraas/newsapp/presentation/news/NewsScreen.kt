@@ -12,21 +12,22 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import fr.lleotraas.newsapp.domain.retrofit.utils.Utils
+import fr.lleotraas.newsapp.domain.retrofit.utils.Utils.ARTICLE_TITLE
 import fr.lleotraas.newsapp.presentation.news.component.NewsItem
 import fr.lleotraas.newsapp.presentation.utils.Screen
 
 @Composable
 fun NewsScreen(
     navController: NavController,
-    viewModel: NewsViewModel = hiltViewModel()
+    viewModel: NewsViewModel
 ) {
     val state = viewModel.state.value
 
     LazyColumn(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(24.dp)
     ) {
         items(state.articles) { article ->
@@ -36,7 +37,7 @@ fun NewsScreen(
                     .clickable {
                         navController.navigate(
                             Screen.DetailScreen.route +
-                                    "?${Utils.ARTICLE_TITLE}=${article.title}&${Utils.ARTICLE_DESCRIPTION}=${article.description}&${Utils.ARTICLE_IMAGE_URL}=${article.urlToImage}&${Utils.ARTICLE_URL}=${article.url}"
+                                    "?${ARTICLE_TITLE}=${article.title}"
                         )
                     },
                 article = article,
